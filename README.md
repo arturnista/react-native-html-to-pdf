@@ -107,4 +107,5 @@ export default class Example extends Component {
 
 | Param | Type | Default | Note |
 |---|---|---|---|
+| `mediaSize` | `string` | 'NA_GOVT_LETTER' | Allow you to change the document size. [Allowed values.](https://developer.android.com/reference/android/print/PrintAttributes.MediaSize#fields_1)
 | `fonts` | Array | | Allow custom fonts `['/fonts/TimesNewRoman.ttf', '/fonts/Verdana.ttf']`

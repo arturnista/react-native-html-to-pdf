@@ -59,16 +59,17 @@ public class RNHTMLtoPDFModule extends ReactContextBaseJavaModule {
               options.hasKey("base64") && options.getBoolean("base64") == true,
               Arguments.createMap(),
               promise,
-              options.hasKey("baseURL") ? options.getString("baseURL") : null);
+              options.hasKey("baseURL") ? options.getString("baseURL") : null,
+              options.hasKey("mediaSize") ? options.getString("mediaSize") : null);
     } catch (Exception e) {
       promise.reject(e.getMessage());
     }
   }
 
   private void convertToPDF(String htmlString, File file, boolean shouldEncode, WritableMap resultMap, Promise promise,
-      String baseURL) throws Exception {
+      String baseURL, String mediaSize) throws Exception {
     try {
-      PdfConverter.getInstance().convert(mReactContext, htmlString, file, shouldEncode, resultMap, promise, baseURL);
+      PdfConverter.getInstance().convert(mReactContext, htmlString, file, shouldEncode, resultMap, promise, baseURL, mediaSize);
     } catch (Exception e) {
       throw new Exception(e);
     }
